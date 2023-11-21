@@ -1,25 +1,27 @@
-{%extend 'webapp/base.html'%}
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
 
 {% block content%}
 
 
 <body>
 
- <div class="container bg-light shadow-md p-5">
-
-
+ <div class="container bg-light shadow-md p-5 form-layout">
+ 
+      
     <h3>Create your account </h3>
-
+ 
     <h5> Start managing your clients today! </h5>
 
     <hr>
     <br>
 
-    <form method="POST" autocomplete="off">
+    <form method="POST" autocomplete="off"> 
 
-        {% crsf_token%}
+        {% csrf_token %}
 
-        {{form.as_p}}
+        {{form|crispy}}
 
 
         <br>
@@ -30,13 +32,15 @@
     <br>
       
     <div class="text-center">
-       <p>Already have an account? </p> <a href="{%url ''%}">login </a>
+       <p>Already have an account? </p> <a href="{%url 'login'%}">login </a>
 
     </div>
 
 
 
   </div>
+
+  <br>
 
 </body> 
 {%endblock%}
