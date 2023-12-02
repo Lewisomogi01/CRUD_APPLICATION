@@ -1,0 +1,1 @@
+ CRUD application refers to an application that performs the basic operations of Create, Read, Update, and Delete on data. These operations correspond to the basic actions that can be performed on most database systems.
